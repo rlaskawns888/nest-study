@@ -11,7 +11,7 @@ import {
     HttpStatus
 } from '@nestjs/common';
 import { Response } from 'express'
-import { Cat } from './dto/cat';
+import { Cat } from './interfaces/cat.interface';
 
 @Controller("/cats")
 export class CatsController {
