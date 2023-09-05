@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { Cat } from './interfaces/cat.interface';
+import { Cats } from './interfaces/cats.interface';
 
 @Injectable() // Nest IoC @Injectable() 컨테이너에서 관리할 수 있는 클래스 임을 선언하는 메타데이터를 연결합니다
 export class CatsService {
-    private readonly cats: Cat[] = [];
+    private readonly cats: Cats[] = [];
 
-    create(cat: Cat) {
+    create(cat: Cats) {
         this.cats.push(cat);
     }
 
