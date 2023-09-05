@@ -1,7 +1,7 @@
 # nest-study
 nest-study
 
-https://docs.nestjs.com/providers 
+https://docs.nestjs.com/pipes
 -> 진행중
 
 

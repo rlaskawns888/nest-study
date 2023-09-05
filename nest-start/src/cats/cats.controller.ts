@@ -8,14 +8,21 @@ import {
     Body,
     Param,
     Res,
-    HttpStatus,
-    Optional
+    Optional,
+    UseFilters,
+    HttpException,
+    HttpStatus
 } from '@nestjs/common';
 import { Response } from 'express'
 
 import { CreateCatsDto } from './dto/create-dto.dto';
 import { CatsService } from './cats.service';
 import { Cats } from './interfaces/cats.interface';
+
+// 사용자 정의 에러 처리
+import { ForbiddenException } from './filters/cats.exception';
+import { HttpExceptionFilter } from 'src/common/filter/http.filter';
+
 
 @Controller("/cats")
 export class CatsController {
@@ -26,14 +33,22 @@ export class CatsController {
     constructor(private catsService: CatsService) {}
 
     @Post()
-    create(@Body() dto: CreateCatsDto) {        
-        this.catsService.create(dto);
+    @UseFilters(new HttpExceptionFilter()) //filter 공통
+    create(@Body() dto: CreateCatsDto) {
+        
+        throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+        // this.catsService.create(dto);
     } 
     
     // ex) /cats?test=123
     @Get()
     findAll(@Query() query: string) {
         return this.catsService.findAll();
+    }
+
+    @Get("/error/test")
+    errorTest() {
+        throw new ForbiddenException();
     }
 
     /**
