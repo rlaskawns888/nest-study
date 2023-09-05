@@ -23,10 +23,10 @@ export class CatsController {
     // constructor(@Optional() private catsService: CatsService) {}
     // : CatsService가 존재할수도 있고 없고, 선택적인 결과 도출
 
-    constructor(@Optional() private catsService: CatsService) {}
+    constructor(private catsService: CatsService) {}
 
     @Post()
-    create(@Body() dto: CreateCatsDto) {
+    create(@Body() dto: CreateCatsDto) {        
         this.catsService.create(dto);
     } 
     

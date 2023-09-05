@@ -6,7 +6,12 @@ export class CatsService {
     private readonly cats: Cats[] = [];
 
     create(cat: Cats) {
+        console.log('cats: ', this.cats);
+        
         this.cats.push(cat);
+
+        console.log('cats: ', this.cats);
+        
     }
 
     findAll() {
