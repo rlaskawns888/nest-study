@@ -1,7 +1,7 @@
 # nest-study
 nest-study
 
-https://docs.nestjs.com/pipes
+https://docs.nestjs.com/guards
 -> 진행중
 
 
