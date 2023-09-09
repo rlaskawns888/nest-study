@@ -20,6 +20,9 @@ import { GuardController } from './common/guards/guard.controller';
 //interceptor
 import { InterceptorTestController } from './intercetpor-test/interceptor.controller';
 
+//custom-decorator
+import { DecoratorController } from './decorator/decorator.controller';
+
 // @Global() : 모듈을 전역 범위로 만듬.
 // . 전역 모듈은 일반적으로 루트 또는 코어 모듈에 의해 한 번만 등록되어야 함
 @Module({
@@ -29,7 +32,8 @@ import { InterceptorTestController } from './intercetpor-test/interceptor.contro
     ExceptionController, 
     PipeController, 
     GuardController, 
-    InterceptorTestController
+    InterceptorTestController,
+    DecoratorController,
   ],
   providers: [AppService, ExceptionService],
   exports: [CatsModule] //export 사용 시, app.module.ts 모듈을 가져올 경우, CatsModule을 사용 가능.
