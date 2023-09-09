@@ -1,7 +1,7 @@
 # nest-study
 nest-study
 
-https://docs.nestjs.com/fundamentals/lifecycle-events
+https://docs.nestjs.com/fundamentals/custom-providers
 -> 진행중
 
 
