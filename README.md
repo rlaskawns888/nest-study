@@ -1,7 +1,7 @@
 # nest-study
 nest-study
 
-https://docs.nestjs.com/guards
+https://docs.nestjs.com/fundamentals/lifecycle-events
 -> 진행중
 
 
